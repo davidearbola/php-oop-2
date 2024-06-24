@@ -1,5 +1,11 @@
 <?php
-include __DIR__ . '/data/Store.php'
+include __DIR__ . '/data/Store.php';
+include __DIR__ . '/moduls/Cliente.php';
+
+$nuovoCliente = new Cliente('Davide', 'Arbola', 'davidearbola@gmail.com');
+$nuovoCliente->addProdotto($prodotti[1]);
+$nuovoCliente->addProdotto($prodotti[4]);
+$nuovoCliente->addProdotto($prodotti[2])
 ?>
 
 <!DOCTYPE html>
@@ -31,9 +37,15 @@ include __DIR__ . '/data/Store.php'
                         <?php } elseif ($prodotto instanceof Cucce) { ?>
                             <span>Gruppo: Cucce per <?= $prodotto->categoria->nome ?></span>
                         <?php } ?>
+                        <button></button>
                     </div>
                 </div>
             <?php } ?>
+        </div>
+        <div class="bg-white">
+            <pre>
+                <?= var_dump($nuovoCliente->carrello) ?>
+            </pre>
         </div>
     </div>
 
