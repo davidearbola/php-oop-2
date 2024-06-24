@@ -6,9 +6,9 @@ class Prodotto
     public $categoria;
     public $idProdotto;
 
-    public function __construct(TipoProdotto $tipo, CategoriaProdotto $categoria, $idProdotto)
+    public function __construct(TipoProdotto $tipoProdotto, CategoriaProdotto $categoria, $idProdotto)
     {
-        $this->tipoProdotto = $tipo;
+        $this->tipoProdotto = $tipoProdotto;
         $this->categoria = $categoria;
         $this->idProdotto = $idProdotto;
     }

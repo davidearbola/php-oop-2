@@ -14,9 +14,19 @@ include __DIR__ . '/data/Store.php'
 </head>
 
 <body>
-    <pre>
-    <?= var_dump($prodotti[0]) ?>
-    </pre>
+    <div class="position-absolute end-0 w-25 text-bg-dark p-2">
+        <pre>
+        <?= var_dump($prodotti[0]) ?>
+        </pre>
+    </div>
+    <h2>Prodotto</h2>
+    <img src="<?= $prodotti[0]->tipoProdotto->immagine ?>" alt="">
+    <h3>Nome: <?= $prodotti[0]->tipoProdotto->nome ?></h3>
+    <h4>Marca: <?= $prodotti[0]->tipoProdotto->marca ?></h4>
+    <p>Descrizione: <?= $prodotti[0]->tipoProdotto->descrizione ?></p>
+    <p>Tipo: <?= $prodotti[0]->tipoProdotto->tipo ?></p>
+    <p>Categoria: <?= $prodotti[0]->categoria->nome . " " . $prodotti[0]->categoria->icona  ?></p>
+    <p>Id Prodotto: <?= $prodotti[0]->idProdotto ?></p>
 </body>
 
 </html>
