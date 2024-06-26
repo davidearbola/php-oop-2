@@ -16,34 +16,4 @@ class Prodotto
         $this->categoria = $categoria;
         $this->prezzo = $prezzo;
     }
-
-    // public function getNome()
-    // {
-    //     return $this->nome;
-    // }
-
-    // public function getMarca()
-    // {
-    //     return $this->marca;
-    // }
-
-    // public function getDescrizione()
-    // {
-    //     return $this->descrizione;
-    // }
-
-    // public function getImg()
-    // {
-    //     return $this->immagine;
-    // }
-
-    // public function getCategoria()
-    // {
-    //     return $this->categoria;
-    // }
-
-    // public function getPrezzo()
-    // {
-    //     return $this->prezzo;
-    // }
 }

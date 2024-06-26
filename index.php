@@ -1,11 +1,7 @@
 <?php
-include __DIR__ . '/data/Store.php';
-include __DIR__ . '/moduls/Cliente.php';
 
-$nuovoCliente = new Cliente('Davide', 'Arbola', 'davidearbola@gmail.com');
-$nuovoCliente->addProdotto($prodotti[1]);
-$nuovoCliente->addProdotto($prodotti[4]);
-$nuovoCliente->addProdotto($prodotti[2])
+include __DIR__ . '/session.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -20,33 +16,22 @@ $nuovoCliente->addProdotto($prodotti[2])
 </head>
 
 <body class="bg-dark">
+
     <div class="w-75 mx-auto mt-5">
         <div class="row">
-            <?php foreach ($prodotti as $prodotto) { ?>
-                <div class="col-4 p-2">
-                    <div class="text-bg-light rounded p-2">
-                        <img src="<?= $prodotto->immagine ?>" class="w-100">
-                        <h5><?= $prodotto->nome ?></h5>
-                        <span><?= $prodotto->marca ?></span><br>
-                        <span><?= $prodotto->prezzo ?></span><br>
-                        <span><?= $prodotto->categoria->nome . " " . $prodotto->categoria->icona ?></span><br>
-                        <?php if ($prodotto instanceof Cibo) { ?>
-                            <span>Gruppo: Cibo per <?= $prodotto->categoria->nome ?></span>
-                        <?php } elseif ($prodotto instanceof Giochi) { ?>
-                            <span>Gruppo: Giochi per <?= $prodotto->categoria->nome ?></span>
-                        <?php } elseif ($prodotto instanceof Cucce) { ?>
-                            <span>Gruppo: Cucce per <?= $prodotto->categoria->nome ?></span>
-                        <?php } ?>
-                        <button></button>
-                    </div>
-                </div>
+            <?php foreach ($prodotti as $indice => $prodotto) { ?>
+                <?php include __DIR__ . '/partials/Card.php' ?>
             <?php } ?>
         </div>
-        <div class="bg-white">
-            <pre>
-                <?= var_dump($nuovoCliente->carrello) ?>
-            </pre>
+        <div class="row">
+            <h3 class="text-white">Carrello:</h3>
+            <?php
+            foreach ($_SESSION['newCart'] as $prodotto) {
+                include __DIR__ . '/partials/CardCarrello.php';
+            }
+            ?>
         </div>
+        <a href="reset.php" class="btn btn-danger">Svuota Carrello</a>
     </div>
 
 </body>

@@ -1,9 +1,9 @@
 <?php
-include './moduls/Prodotto.php';
-include './moduls/Categoria.php';
-include './moduls/Cibo.php';
-include './moduls/Giochi.php';
-include './moduls/Cucce.php';
+include __DIR__ . '/../moduls/Prodotto.php';
+include __DIR__ . '/../moduls/Categoria.php';
+include __DIR__ . '/../moduls/Cibo.php';
+include __DIR__ . '/../moduls/Giochi.php';
+include __DIR__ . '/../moduls/Cucce.php';
 
 $categoriaCani = new Categoria('Cani', '<i class="fa-solid fa-dog"></i>');
 $categoriaGatti = new Categoria('Gatti', '<i class="fa-solid fa-cat"></i>');
@@ -58,3 +58,4 @@ $prodotti = [
         '40x40'
     )
 ];
+$user = new Cliente('Davide', 'Arbola', 'davidearbola@gmail.com');
